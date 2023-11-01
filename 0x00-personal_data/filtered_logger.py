@@ -84,7 +84,7 @@ class RedactingFormatter(logging.Formatter):
     """
 
     REDACTION = "***"
-    FORMAT = "[HOLBERTON] %(name)s %(levelname)s %(asctime)-15s: %(message)s"
+    FORMAT="[HOLBERTON] %(name)s %(levelname)s %(asctime)-15s: %(message)s"
     FORMAT_FIELDS = ('name', 'levelname', 'asctime', 'message')
     SEPARATOR = ";"
 
@@ -96,7 +96,7 @@ class RedactingFormatter(logging.Formatter):
         ''' Formats a LogRecord
         '''
         msg = super(RedactingFormatter, self).format(record)
-        txt = filter_datum(self.fields, self.REDACTION, msg, self.SEPARATOR)
+        txt=filter_datum(self.fields, self.REDACTION, msg, self.SEPARATOR)
         return txt
 
 
